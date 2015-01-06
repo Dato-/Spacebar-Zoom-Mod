@@ -1,0 +1,55 @@
+// ==UserScript==
+// @name pr0 SpacebarMod
+// @namespace 
+// @author Seglormeister (extracted by Dato)
+// @description Uploads haben max. Höhe und weden mit der Leertaste auf orig. Größe gezommz (old pr0 style)
+// @include http://pr0gramm.com/*
+// @version 1.2
+// @grant none
+// @require http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
+// @updateURL 
+// ==/UserScript==
+
+(function() {
+/****/// CSS
+var css = 
+'.item-image{max-height:460px;}  ';
+if (typeof GM_addStyle != "undefined") {
+GM_addStyle(css);
+ }  
+ else {
+var node = document.createElement("style");
+node.appendChild(document.createTextNode(css));
+var heads = document.getElementsByTagName("head");
+if (heads.length > 0) {
+heads[0].appendChild(node);
+ } 
+}
+
+
+  // Space Vergrößerung
+document.addEventListener("keydown", keydown, false);
+var spacepressed = false;
+function keydown(event) {
+if (event.keyCode == '32') {
+
+  // Bild mit Space vergrößern
+if ($('.item-image').length != 0) {
+event.preventDefault();
+event.stopPropagation();
+if (!spacepressed && $("div.item-container").length) {
+$(".item-image").css( 'max-height', '100%' );
+$(".item-image").css( 'cursor', 'move' );
+spacepressed = false;
+}else{
+$(".item-image").css( 'max-height', '460px' );
+$(".item-image").css( 'cursor', 'pointer' );
+spacepressed = false;
+   }
+  }
+ }
+}
+
+})();
+
+//Danke Seglor !
