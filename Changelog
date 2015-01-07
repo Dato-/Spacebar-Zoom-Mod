@@ -1,0 +1,5 @@
+Version:
+1.0 Kleine Bilddarstellung
+1.1 Leertaste zoomen funzt, aber buggt
+1.2 Leertaste zoomt groß, aber nicht mehr klein. Funzt dafür bei jedem Anschlag
+1.3 Leertastenzoom interferriert nichtmehr mit Kommentare o.Ä. schreiben.
