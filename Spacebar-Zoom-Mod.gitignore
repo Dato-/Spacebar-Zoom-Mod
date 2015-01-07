@@ -4,10 +4,10 @@
 // @author Seglormeister (extracted by Dato)
 // @description Uploads haben max. Höhe und weden mit der Leertaste auf orig. Größe gezommz (old pr0 style)
 // @include http://pr0gramm.com/*
-// @version 1.2
+// @version 1.3
 // @grant none
 // @require http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
-// @updateURL 
+// @updateURL https://github.com/Dato-/Spacebar-Zoom-Mod/blob/master/Spacebar-Zoom-Mod.gitignore
 // ==/UserScript==
 
 (function() {
@@ -32,6 +32,12 @@ document.addEventListener("keydown", keydown, false);
 var spacepressed = false;
 function keydown(event) {
 if (event.keyCode == '32') {
+
+// falls textarea aktiv
+var el = document.activeElement;
+if (el && (el.tagName.toLowerCase() == 'input' && el.type == 'text' || el.tagName.toLowerCase() == 'textarea')) {
+return;
+}
 
   // Bild mit Space vergrößern
 if ($('.item-image').length != 0) {
