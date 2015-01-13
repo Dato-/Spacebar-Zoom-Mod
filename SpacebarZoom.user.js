@@ -7,7 +7,7 @@
 // @version 1.3
 // @grant none
 // @require http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
-// @updateURL https://github.com/Dato-/Spacebar-Zoom-Mod/blob/master/Spacebar-Zoom-Mod.gitignore
+// @updateURL https://github.com/Dato-/Spacebar-Zoom-Mod/blob/master/SpacebarZoom.user.js
 // ==/UserScript==
 
 (function() {
